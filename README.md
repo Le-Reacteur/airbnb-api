@@ -1,19 +1,29 @@
 # Airbnb API
 
-## Installation du projet
+## Installer les dépendances
 
 ```bash
 npm install
 ```
 
-## Importation des données
+## Importer les données MongoDB
 
 ```bash
 npm run data
 ```
 
-## Démarrage du serveur
+## Démarrer le serveur
 
 ```bash
 npm start
 ```
+
+## Tester l'API
+
+```bash
+npm run test
+```
+
+## Version en ligne
+
+https://airbnb-api-htfyyqiyki.now.sh
