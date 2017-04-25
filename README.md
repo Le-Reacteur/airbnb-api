@@ -15,5 +15,5 @@ npm run data
 ## Démarrage du serveur
 
 ```bash
-npm run dev
+npm start
 ```
