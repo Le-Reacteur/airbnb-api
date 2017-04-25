@@ -26,4 +26,4 @@ npm run test
 
 ## Version en ligne
 
-https://airbnb-api-htfyyqiyki.now.sh
+https://airbnb-api.now.sh
