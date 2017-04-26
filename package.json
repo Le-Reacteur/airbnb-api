@@ -11,6 +11,9 @@
   },
   "author": "LeReacteur",
   "license": "ISC",
+  "now": {
+    "alias": "airbnb-api"
+  },
   "dependencies": {
     "body-parser": "^1.16.1",
     "compression": "^1.6.2",
