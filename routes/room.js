@@ -59,7 +59,8 @@ router.get("/", function(req, res, next) {
 
       filter.city = city._id;
       if (
-        req.query.priceMin !== undefined || req.query.priceMax !== undefined
+        req.query.priceMin !== undefined ||
+        req.query.priceMax !== undefined
       ) {
         filter.price = {};
         if (req.query.priceMin !== undefined) {

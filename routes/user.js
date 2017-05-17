@@ -47,30 +47,6 @@ router.post("/log_in", function(req, res, next) {
   })(req, res, next);
 });
 
-router.get("/:id", function(req, res) {
-  User.findById(req.params.id)
-    .select("account")
-    .populate("account.rooms")
-    .populate("account.favorites")
-    .exec()
-    .then(function(user) {
-      if (!user) {
-        res.status(404);
-        return next("User not found");
-      }
-
-      return res.json({
-        _id: user._id,
-        account: user.account
-      });
-    })
-    .catch(function(err) {
-      res.status(400);
-      return next(err.message);
-    });
-});
-
-/*
 // L'authentification est obligatoire pour cette route
 router.get("/:id", function(req, res, next) {
   passport.authenticate("bearer", { session: false }, function(
@@ -108,6 +84,5 @@ router.get("/:id", function(req, res, next) {
       });
   })(req, res, next);
 });
-*/
 
 module.exports = router;
