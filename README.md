@@ -27,3 +27,8 @@ npm run test
 ## Version en ligne
 
 https://airbnb-api.now.sh
+
+## Credits
+
+[Farid Safi](https://twitter.com/faridsafi)
+[www.LeReacteur.io](http://www.lereacteur.io)

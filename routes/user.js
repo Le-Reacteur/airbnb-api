@@ -5,7 +5,7 @@ var uid2 = require("uid2");
 
 var User = require("../models/User.js");
 
-router.post("/sign_up", function(req, res) {
+router.post("/sign_up", function(req, res, next) {
   User.register(
     new User({
       email: req.body.email,
@@ -20,11 +20,14 @@ router.post("/sign_up", function(req, res) {
     req.body.password, // Le mot de passe doit être obligatoirement le deuxième paramètre transmis à `register` afin d'être crypté
     function(err, user) {
       if (err) {
-        console.error(err);
-        // TODO test
-        res.status(400).json({ error: err.message });
+        res.status(400);
+        return next(err.message);
       } else {
-        res.json({ _id: user._id, token: user.token, account: user.account });
+        return res.json({
+          _id: user._id,
+          token: user.token,
+          account: user.account
+        });
       }
     }
   );
