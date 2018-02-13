@@ -4,7 +4,6 @@ require("dotenv").config();
 
 // Le package `mongoose` est un ODM (Object-Document Mapping) permettant de manipuler les documents de la base de données comme si c'étaient des objets
 var mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, function(err) {
   if (err) console.error("Could not connect to mongodb.");
 });
