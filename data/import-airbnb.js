@@ -54,7 +54,7 @@ for (var i = 0; i < cities.length; i++) {
 
   city.save(function(err, obj) {
     if (err) {
-      console.log("error saving city " + obj.name);
+      console.log("error saving city " + city.name);
     } else {
       console.log("saved city " + obj.name);
     }
@@ -94,7 +94,7 @@ setTimeout(
               var room = new Room(data);
               room.save(function(err, obj) {
                 if (err) {
-                  console.log("error saving room " + obj.title);
+                  console.log("error saving room " + room.title);
                 } else {
                   console.log("saved room " + obj.title);
                 }
