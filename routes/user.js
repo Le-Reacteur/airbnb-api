@@ -42,7 +42,12 @@ router.post("/sign_up", function(req, res, next) {
   );
 });
 
-router.post("/log_in", function(req, res, next) {
+const fixBody = (req, res, next) => {
+  req.body = req.fields;
+  next();
+};
+
+router.post("/log_in", fixBody, function(req, res, next) {
   passport.authenticate("local", { session: false }, function(err, user, info) {
     if (err) {
       res.status(400);
