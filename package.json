@@ -15,11 +15,12 @@
     "alias": "airbnb-api"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "cloudinary": "^1.17.0",
     "compression": "^1.7.1",
     "cors": "^2.8.4",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
+    "express-formidable": "^1.2.0",
     "helmet": "^3.11.0",
     "mongoose": "^5.0.6",
     "mongoose-simple-random": "^0.4.1",

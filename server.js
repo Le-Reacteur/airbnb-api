@@ -20,8 +20,8 @@ var compression = require("compression");
 app.use(compression());
 
 // Parse le `body` des requêtes HTTP reçues
-var bodyParser = require("body-parser");
-app.use(bodyParser.json());
+var formidable = require("express-formidable");
+app.use(formidable());
 
 // Initialisation des models
 var User = require("./models/User");
