@@ -103,7 +103,7 @@ const uploadPictures = (req, res, next) => {
   // J'initialise le nombre d'upload à zéro
   let filesUploaded = 0;
   // Et pour chaque fichier dans le tableau, je crée un upload vers Cloudinary
-  const files = Object.keys(req.files);
+  const files = Object.keys(req.picture);
   if (files.length) {
     files.forEach(fileKey => {
       // Je crée un nom spécifique pour le fichier
@@ -145,7 +145,7 @@ const uploadPictures = (req, res, next) => {
 };
 
 // L'authentification est obligatoire pour cette route
-router.get("/upload-picture", uploadPictures, function(req, res, next) {
+router.get("/upload_picture", uploadPictures, function(req, res, next) {
   passport.authenticate("bearer", { session: false }, async function(
     err,
     user,
@@ -160,7 +160,7 @@ router.get("/upload-picture", uploadPictures, function(req, res, next) {
     }
 
     try {
-      user.pictures = req.pictures;
+      user.account.photos = req.pictures;
       await user.save();
       res.json(req.pictures);
     } catch (err) {
