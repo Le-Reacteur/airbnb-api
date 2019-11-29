@@ -126,6 +126,7 @@ router.get("/upload_picture", uploadPictures, function(req, res, next) {
       await user.save();
       res.json(req.pictures);
     } catch (err) {
+      console.log(err.message);
       res.status(400).json(err.message);
       // res.status(400);
       // return next(err.message);
