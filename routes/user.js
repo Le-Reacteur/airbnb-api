@@ -65,7 +65,7 @@ const uploadPictures = (req, res, next) => {
   // J'initialise le nombre d'upload à zéro
   let filesUploaded = 0;
   // Et pour chaque fichier dans le tableau, je crée un upload vers Cloudinary
-  const files = Object.keys(req.picture);
+  const files = Object.keys(req.files);
   if (files.length) {
     files.forEach(fileKey => {
       // Je crée un nom spécifique pour le fichier
