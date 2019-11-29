@@ -107,7 +107,7 @@ const uploadPictures = (req, res, next) => {
 };
 
 // L'authentification est obligatoire pour cette route
-router.get("/upload_picture", uploadPictures, function(req, res, next) {
+router.post("/upload_picture", uploadPictures, function(req, res, next) {
   passport.authenticate("bearer", { session: false }, async function(
     err,
     user,
