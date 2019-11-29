@@ -74,7 +74,7 @@ const uploadPictures = (req, res, next) => {
         req.files[fileKey].path,
         {
           // J'assigne un dossier spécifique dans Cloudinary pour chaque utilisateur
-          public_id: `airbnb/${req.user._id}/${name}`
+          public_id: `airbnb/${name}`
         },
         (error, result) => {
           console.log(error, result);
